@@ -5,20 +5,20 @@
 class Icnsify < Formula
   desc ""
   homepage ""
-  version "2.2.4"
+  version "2.2.6"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/JackMordaunt/icns/releases/download/v2.2.4/icns_2.2.4_darwin_arm64.tar.gz"
-      sha256 "ea5d76e4fda61eb960aeaaf7bf973941630786403866ad314c968d66bcadb456"
+      url "https://github.com/JackMordaunt/icns/releases/download/v2.2.6/icns_2.2.6_darwin_arm64.tar.gz"
+      sha256 "f5eb4626c79a7952d0b08f1454037990846a54eb0db55b09d46b931d1bcbd146"
 
       def install
         bin.install "icnsify"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/JackMordaunt/icns/releases/download/v2.2.4/icns_2.2.4_darwin_amd64.tar.gz"
-      sha256 "96636f37b8b0aa7198077b5a495f8d2f154f607d9b107cd63a1a3af14294529d"
+      url "https://github.com/JackMordaunt/icns/releases/download/v2.2.6/icns_2.2.6_darwin_amd64.tar.gz"
+      sha256 "16419cb48ac78adb20e0cbc6c2597f4406476755b0498fec8b16bd5cdb5567fc"
 
       def install
         bin.install "icnsify"
@@ -27,17 +27,17 @@ class Icnsify < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/JackMordaunt/icns/releases/download/v2.2.4/icns_2.2.4_linux_amd64.tar.gz"
-      sha256 "7e075f41e4a7115af6fa3cc02e8b977c9d8ea26bc652531df48b44f373db488c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/JackMordaunt/icns/releases/download/v2.2.6/icns_2.2.6_linux_arm64.tar.gz"
+      sha256 "9a16c4731da69bb104d4673caa24ba7b0e124ce83b59af2ee916805363de49e9"
 
       def install
         bin.install "icnsify"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/JackMordaunt/icns/releases/download/v2.2.4/icns_2.2.4_linux_arm64.tar.gz"
-      sha256 "f60f35ba9c5a15f149d3b39ad004c2b7c80103ca8f06f740617aada163ddab70"
+    if Hardware::CPU.intel?
+      url "https://github.com/JackMordaunt/icns/releases/download/v2.2.6/icns_2.2.6_linux_amd64.tar.gz"
+      sha256 "2c5b8575014e8c8a8a455d8f72c07fbcd41fd51fc53906d13ee6f45c486f57af"
 
       def install
         bin.install "icnsify"
